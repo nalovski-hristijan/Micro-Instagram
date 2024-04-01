@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Micro_Instagram.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3"  CornerRadius="0">
+            <Label Text="Home" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <CollectionView x:Name="photosCollectionView" SelectionMode="Single" SelectionChanged="OnItemSelected">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame HasShadow="True" Padding="5" CornerRadius="20" BorderColor="LightSkyBlue">
+                        <Grid Padding="10">
+                        <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="{Binding ThumbnailUrl}" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
+                        <Label Grid.Column="1" Text="{Binding Title}" VerticalOptions="Center" LineBreakMode="WordWrap" Margin="10,0,0,0" FontSize="Body" FontAttributes="Bold"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>
