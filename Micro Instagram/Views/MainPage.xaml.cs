@@ -63,7 +63,7 @@ namespace Micro_Instagram
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            MessagingCenter.Unsubscribe<DetailPage, int>(this, "PhotoDeleted");
+            MessagingCenter.Unsubscribe<DetailPage, int>(this, "DeletePhoto");
             MessagingCenter.Unsubscribe<DetailPage, Photo>(this, "UpdatePhoto");
         }
 
